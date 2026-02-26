@@ -3,3 +3,12 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+
+body {
+background-image: url("assets/foto\ do\ mangá.jpg");
+  background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
