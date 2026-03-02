@@ -6,7 +6,7 @@
 }
 
 body {
-    background-image: url("assets/e856af0808e4c543e7ddf7ed743bfe22ce67826b342eb17dc6f0afad919f8fef.jpeg");
+    background-image: url("assets/assets/e856af0808e4c543e7ddf7ed743bfe22ce67826b342eb17dc6f0afad919f8fef.jpeg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -14,13 +14,13 @@ body {
 }
 
 
-h2 {
-    text-align: center;
-    font-size: 60px;
-    padding: 20px 10px auto;
-    color: orangered;
-    
+
+h1 {
+  color: #ff7301;
+  text-shadow: 0 0 10px #0059ff, 0 0 20px #000000;
+  animation: carregar-ki 1.5s infinite alternate;
 }
+
 
 p {
     text-align: justify;
@@ -29,8 +29,76 @@ p {
     color: rgb(255, 208, 0);
 }
 
+.caixa-texto{
+  background-color: rgb(0, 0, 0,0.7);
+  border: 3px solid #FF6600;
+  border-radius: 15px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 800px;
+  color: #FFFFFF;
+  box-shadow: 0 0 15px rgba(255,102,0,0.5);
+  backdrop-filter: bluer(10px);
+  border: 2px solid rgbac(255, 102, 0, 0.5);
+  position: relative;
+  clip-path: polygon(0% 5%, 100% 0%, 95%, 0% 100%);
+  border-left: 8px solid #FF6600;
+  
+}
 
 
+.Selo {
+  position: absolute;
+  top: -10px;
+  right: -15px;
+  background-color: #ff0000;
+  color:white;
+  padding: 8px 20px;
+  font-family: "Bangers", cursive;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  transform: rotate(15deg);
+  border: 2px solid rgba(0,0,0,0.5);
+  z-index: 20;
+  transition: 0.3s;
+}
+.Selo:hover {
+  transform: rotate(0deg) scale(1.1);
+}
+
+
+
+@keyframes pulso-ki {
+  0% { transform: scale(1); box-shadow:0 0 5px #FF6600;}
+  50% { transform: scale(1.05); box-shadow: 0 0 20px #FFCC00;}
+  100% { transform: scale(1); box-shadow: 0 0 5px #FF6600;}
+}
+
+@keyframes carregar-ki {
+  from { text-shadow: 0 0 10px #0099ff; }
+  to { text-shadow: 0 0 25px #00ffff, 0 0 10px #FFFFFF;}
+}
+
+@keyframes tremer {
+  0% { transform: translate(1px, px);}
+  50% { transform: translate(-1px, -1px);}
+  100% { transform: translate(1px, 1px);}
+}
+
+@keyframes pulsar-glow {
+  from { box-shadow: 0 0 5px #FF6600;}
+  to { box-shadow: 0 0 20px #FFCC00, 0 0 10px #fff;}
+}
+
+@keyframes brilho-extremo {
+    from { filter: brightness(1); }
+    to { filter: brightness(1.5) drop-shadow(0 0 10px #fff); }
+}
+
+@keyframes fluir-energia {
+  from { background-position: 200% 0;}
+  to { background-position: 0% 0;}
+}
 
 .container-botoes {
     display:flex ;
@@ -38,6 +106,60 @@ p {
     gap: 20px;
     margin-top: 20px;
 }
+
+.btn-ki {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #FFCC00;
+  border: 3px solid #000;
+  padding: 15px 25px;
+  font-family: "Bangers", cursive;
+  font-size: 1.2rem;
+  cursor: pointer;
+  z-index: 9999;
+  transition: 0.3s;
+  box-shadow: 0 0 15px rgba(255, 208, 0, 0.6);
+}
+
+.btn-ki:hover {
+  animation: tremer 0.1s infinite;
+  box-shadow: 0 0 30px #FFFFFF;
+}
+
+.container-barra-ki {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 8px; 
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 10000;
+}
+
+
+.progresso-ki {
+    width: 0%;
+    height: 100%;
+    background-image:  linear-gradient(90deg, #ff6600, #ffcc00, #FFFFFF, #ffcc00, #ff6600);
+    background-size: 200% 100%;
+    animation: fluir-energia 2s linear infinite;
+    box-shadow: 0 0 15px #ffcc00;
+    transition: width 2s ease-in-out, box-shadow 0.5s;}
+
+body:has(.btn-ki:hover) .progresso-ki {
+    width: 100%;
+    box-shadow: 0 0 30px #ffffff;
+    animation: brilho-extremo 0.5s infinite alternate;
+}
+
+
+
+
+.btn-ki:hover {
+  animation: tremer-ki 0.1s infinite;
+}
+
 
 .botao-dbz {
   display: inline-block;
@@ -52,17 +174,22 @@ p {
   border-radius: 30px;      
   
   
-  font-family: 'Arial Black', sans-serif;
+  font-family: 'Bangers', system-ui;
   font-weight: bold;
+  font-size: 20px;
   text-transform: uppercase;
   padding: 12px 30px;
+  letter-spacing: 1px;
   
   
-  box-shadow: 0 4px 0 #cc5200;
+  box-shadow: 0 0 10px #FFCC00;
+  animation: pulsar-glow 2s infinite alternate;
   
   
   transition: all 0.2s ease;
   cursor: pointer;
+  
+  animation: pulso-ki 2s infinite ease-in-out;
 }
 
 
